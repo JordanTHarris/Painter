@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="dEpBlG" name="Painter" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.Painter" includeBinaryInAppConfig="1"
+              jucerVersion="3.1.1">
+  <MAINGROUP id="hOioUu" name="Painter">
+    <GROUP id="{BF66571F-33CD-5BE9-0868-06854048CF2C}" name="Source">
+      <FILE id="M6ebGj" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="b6rMkJ" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="O3k2Hf" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="Painter"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="Painter"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2015>
+    <VS2013 targetFolder="Builds/VisualStudio2013">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="Painter"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="Painter"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../../../../Programming/CPPLibraries/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2013>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="1"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>

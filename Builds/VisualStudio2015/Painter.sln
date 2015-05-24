@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2015
+Project("{5225123B-9099-3447-745E-3A6898A77EC0}") = "Painter", "Painter.vcxproj", "{00EE828F-5DCE-3AE0-7830-640D3D47ACA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00EE828F-5DCE-3AE0-7830-640D3D47ACA4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{00EE828F-5DCE-3AE0-7830-640D3D47ACA4}.Debug|Win32.Build.0 = Debug|Win32
+		{00EE828F-5DCE-3AE0-7830-640D3D47ACA4}.Release|Win32.ActiveCfg = Release|Win32
+		{00EE828F-5DCE-3AE0-7830-640D3D47ACA4}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

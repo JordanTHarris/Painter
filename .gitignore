@@ -38,6 +38,7 @@
 
 # SQL Server Database file - VS
 *.sdf
+*.opensdf
 
 # Build/Debug Folders
 **/MacOSX/build
