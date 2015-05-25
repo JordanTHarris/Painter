@@ -14,12 +14,13 @@
 //==============================================================================
 SideBar::SideBar(DrawingCanvas& canvas)
 	: drawingCanvas{ canvas },
-	colourChangeButton{ new ColourChangeButton{canvas} },		// Access DrawingCanvas
-	colourLabel{ new Label{ "ColorLabel", String{"Drawing Color"} } },
-	thicknessSlider{ new Slider{"ThicknessSlider"} },
-	thicknessLabel{ new Label{"ThicknessLabel", String{"Line Thickness"}} },
-	strokeOpacitySlider{ new Slider{"StrokeOpacitySlider"} },
-	opacityLabel{ new Label{"OpacityLabel", String{"Line Opacity"}} }
+	  colourChangeButton{ new ColourChangeButton{canvas} },		// Access DrawingCanvas
+	  colourLabel{ new Label{ "ColorLabel", String{"Drawing Color"} } },
+	  thicknessSlider{ new Slider{"ThicknessSlider"} },
+	  thicknessLabel{ new Label{"ThicknessLabel", String{"Line Thickness"}} },
+	  strokeOpacitySlider{ new Slider{"StrokeOpacitySlider"} },
+	  opacityLabel{ new Label{"OpacityLabel", String{"Line Opacity"}} }
+	
 {
 	addAndMakeVisible(colourChangeButton);
 	colourChangeButton->setLookAndFeel(new LookAndFeel_V3{});
@@ -53,6 +54,11 @@ SideBar::SideBar(DrawingCanvas& canvas)
 	opacityLabel->setJustificationType(Justification::centred);
 	opacityLabel->setFont(Font{"Franklin Gothic", 16, Font::plain});
 
+	// SideBar's resizer on the right edge
+	constrainer.setSizeLimits(100, 400, 250, 800);
+	resizerBar = new ResizableEdgeComponent(this, &constrainer, ResizableEdgeComponent::rightEdge);
+	addAndMakeVisible(resizerBar);
+	resizerBar->setLookAndFeel(new LookAndFeel_V3);
 }
 
 SideBar::~SideBar()
@@ -70,6 +76,10 @@ void SideBar::paint (Graphics& g)
 
 void SideBar::resized()
 {
+	resizerBar->setBounds(getRight() - 6, 0, 6, getHeight());
+	drawingCanvas.setTopLeftPosition(this->getRight(), 0);
+	drawingCanvas.setSize(getParentWidth() - getWidth(), getParentHeight());
+
 	int buttonWidth = getWidth() * 0.75;
 	int buttonX = (getWidth() / 2) - (buttonWidth / 2);
 	colourChangeButton->setBounds(buttonX, 60, buttonWidth, 34);

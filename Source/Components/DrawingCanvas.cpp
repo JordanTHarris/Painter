@@ -16,8 +16,6 @@ DrawingCanvas::DrawingCanvas()
 {
 	strokeThickness = defaultThickness;
 	strokeOpacity = defaultOpacity;
-
-	setSize(getParentWidth(), getParentHeight());
 }
 
 DrawingCanvas::~DrawingCanvas()
@@ -39,7 +37,6 @@ void DrawingCanvas::paint(Graphics& g)
 
 void DrawingCanvas::resized()
 {
-	
 }
 
 void DrawingCanvas::mouseDown(const MouseEvent & event)

@@ -33,7 +33,6 @@ public:
 private:
 	ScopedPointer<DrawingCanvas> drawingCanvas;
 	ScopedPointer<SideBar> sideBar;
-	
 
 	ScopedPointer<ColourSelector> colorSelector;
 	ScopedPointer<Slider> thicknessSlider;

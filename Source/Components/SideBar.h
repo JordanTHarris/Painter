@@ -15,6 +15,7 @@
 #include "ColourChangeButton.h"
 #include "DrawingCanvas.h"
 
+
 //==============================================================================
 /*
 */
@@ -47,9 +48,14 @@ private:
 	ScopedPointer<Label> thicknessLabel;
 	ScopedPointer<Label> opacityLabel;
 
+	ScopedPointer<ResizableEdgeComponent> resizerBar;
+	ComponentBoundsConstrainer constrainer;
+
 	Colour colour;
 
 	DrawingCanvas& drawingCanvas;
+
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SideBar)
 };

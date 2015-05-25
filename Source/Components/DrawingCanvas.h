@@ -36,8 +36,6 @@ public:
 	void setStrokeThickness(float thickness);
 	void setStrokeOpacity(float opacity);
 
-
-
 private:
 	Path path;
 	float xPos;

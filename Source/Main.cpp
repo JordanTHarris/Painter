@@ -70,6 +70,7 @@ public:
 
             centreWithSize (getWidth(), getHeight());
 			setResizable(true, true);
+			setResizeLimits(600, 400, 800, 600);
             setVisible (true);
         }
 

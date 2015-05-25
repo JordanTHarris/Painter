@@ -14,12 +14,10 @@ MainContentComponent::MainContentComponent()
 	: drawingCanvas{new DrawingCanvas{}},
 	  sideBar{new SideBar{*drawingCanvas }}
 {
-	//drawingPanel = new DrawingPanel{};
-	addAndMakeVisible(drawingCanvas);
-	
-	//sideBar = new SideBar{*drawingPanel};
-	addAndMakeVisible(sideBar);
 
+	addAndMakeVisible(drawingCanvas);
+	addAndMakeVisible(sideBar);
+	
     setSize (800, 600);
 }
 
@@ -34,8 +32,8 @@ void MainContentComponent::paint (Graphics& g)
 
 void MainContentComponent::resized()
 {
-	drawingCanvas->setBounds(getWidth() / 5, 0, getWidth() - getWidth() / 5, getHeight());
 	sideBar->setBounds(0, 0, getWidth() / 5, getHeight());
+	drawingCanvas->setBounds(getWidth() / 5, 0, getWidth() - getWidth() / 5, getHeight());
 }
 
 
