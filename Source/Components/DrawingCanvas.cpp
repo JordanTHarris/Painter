@@ -14,6 +14,9 @@
 //==============================================================================
 DrawingCanvas::DrawingCanvas()
 {
+	strokeThickness = defaultThickness;
+	strokeOpacity = defaultOpacity;
+
 	setSize(getParentWidth(), getParentHeight());
 }
 
@@ -30,7 +33,8 @@ void DrawingCanvas::paint(Graphics& g)
 	g.drawRoundedRectangle(0, 0, getWidth(), getHeight(), 4.0f, 4.0f);
 
 	g.setColour(drawColour);
-	g.strokePath(path, PathStrokeType(5));
+	g.setOpacity(strokeOpacity);
+	g.strokePath(path, PathStrokeType(strokeThickness, PathStrokeType::curved, PathStrokeType::rounded));
 }
 
 void DrawingCanvas::resized()
@@ -69,4 +73,14 @@ void DrawingCanvas::mouseDrag(const MouseEvent & event)
 void DrawingCanvas::setColour(Colour colour)
 {
 	drawColour = colour;
+}
+
+void DrawingCanvas::setStrokeThickness(float thickness)
+{
+	strokeThickness = thickness;
+}
+
+void DrawingCanvas::setStrokeOpacity(float opacity)
+{
+	strokeOpacity = opacity;
 }

@@ -16,6 +16,10 @@
 //==============================================================================
 /*
 */
+
+const float defaultThickness = 1.0f;
+const float defaultOpacity = 1.0f;
+
 class DrawingCanvas    : public Component
 {
 public:
@@ -29,6 +33,10 @@ public:
 	void mouseDrag(const MouseEvent& event);
 
 	void setColour(Colour colour);
+	void setStrokeThickness(float thickness);
+	void setStrokeOpacity(float opacity);
+
+
 
 private:
 	Path path;
@@ -36,6 +44,9 @@ private:
 	float yPos;
 
 	Colour drawColour;
+	float strokeThickness;
+	float strokeOpacity;
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DrawingCanvas)
 };

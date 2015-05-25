@@ -19,7 +19,8 @@
 /*
 */
 class SideBar    : public Component,
-				   public Button::Listener
+				   public Button::Listener,
+				   public Slider::Listener
 {
 public:
     SideBar(DrawingCanvas& panel);
@@ -28,6 +29,7 @@ public:
     void paint (Graphics&);
     void resized();
 	void buttonClicked(Button* button);
+	void sliderValueChanged(Slider* slider);
 
 	Colour getColour();
 
@@ -38,11 +40,13 @@ private:
 		the Path.
 	*/
 	ScopedPointer<ColourChangeButton> colourChangeButton;
-
 	ScopedPointer<Slider> thicknessSlider;
-
+	ScopedPointer<Slider> strokeOpacitySlider;
 
 	ScopedPointer<Label> colourLabel;
+	ScopedPointer<Label> thicknessLabel;
+	ScopedPointer<Label> opacityLabel;
+
 	Colour colour;
 
 	DrawingCanvas& drawingCanvas;
