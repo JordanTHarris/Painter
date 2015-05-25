@@ -8,6 +8,9 @@
     <Filter Include="Painter\Source">
       <UniqueIdentifier>{02328AC4-0A23-7B18-15DD-2DD33D4D1EA6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Painter\Source\Components">
+      <UniqueIdentifier>{6DB88E70-0B79-3B1C-1792-44572E5ED64C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Juce Modules">
       <UniqueIdentifier>{422C46B7-0467-2DB0-BF3C-16DFCAFD69AC}</UniqueIdentifier>
     </Filter>
@@ -202,6 +205,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Components\SideBar.cpp">
+      <Filter>Painter\Source\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\Components\DrawingCanvas.cpp">
+      <Filter>Painter\Source\Components</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>Painter\Source</Filter>
     </ClCompile>
@@ -1104,6 +1113,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Components\ColourChangeButton.h">
+      <Filter>Painter\Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Components\SideBar.h">
+      <Filter>Painter\Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\Components\DrawingCanvas.h">
+      <Filter>Painter\Source\Components</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">
       <Filter>Painter\Source</Filter>
     </ClInclude>

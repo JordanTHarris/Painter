@@ -10,14 +10,15 @@
 #define MAINCOMPONENT_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
-
+#include "Components\DrawingCanvas.h"
+#include "Components\SideBar.h"
 
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
-class MainContentComponent   : public Component
+class MainContentComponent : public Component
 {
 public:
 	//==============================================================================
@@ -26,16 +27,14 @@ public:
 
 	void paint(Graphics&);
 	void resized();
-
-	void mouseDown(const MouseEvent& event);
-	void mouseDrag(const MouseEvent& event);
+	
+	void timerCallback();
 
 private:
-	Path path;
-	float xPos;
-	float yPos;
+	ScopedPointer<DrawingCanvas> drawingCanvas;
+	ScopedPointer<SideBar> sideBar;
+	
 
-	OwnedArray<Path> paths;
 	ScopedPointer<ColourSelector> colorSelector;
 	ScopedPointer<Slider> thicknessSlider;
 
