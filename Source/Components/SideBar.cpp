@@ -23,12 +23,14 @@ SideBar::SideBar(DrawingCanvas& canvas)
 	
 {
 	addAndMakeVisible(colourChangeButton);
-	colourChangeButton->setLookAndFeel(new LookAndFeel_V3{});
+	ScopedPointer<LookAndFeel_V3> colorButtonLaF;
+	colourChangeButton->setLookAndFeel(colorButtonLaF);
 
 	addAndMakeVisible(thicknessSlider);
 	thicknessSlider->setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
 	thicknessSlider->setColour(Slider::thumbColourId, Colour::fromRGBA(4, 75, 120, 245));
-	thicknessSlider->setLookAndFeel(new LookAndFeel_V3);
+	ScopedPointer<LookAndFeel_V3> thicknessSliderLaF;
+	thicknessSlider->setLookAndFeel(thicknessSliderLaF);
 	thicknessSlider->setRange(1.0, 15.0);
 	thicknessSlider->setValue(defaultThickness);
 	thicknessSlider->addListener(this);
@@ -36,7 +38,8 @@ SideBar::SideBar(DrawingCanvas& canvas)
 	addAndMakeVisible(strokeOpacitySlider);
 	strokeOpacitySlider->setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
 	strokeOpacitySlider->setColour(Slider::thumbColourId, Colour::fromRGBA(4, 75, 120, 245));
-	strokeOpacitySlider->setLookAndFeel(new LookAndFeel_V3);
+	ScopedPointer<LookAndFeel_V3> opacitySliderLaF;
+	strokeOpacitySlider->setLookAndFeel(opacitySliderLaF);
 	strokeOpacitySlider->setRange(0.0, 1.0);
 	strokeOpacitySlider->setValue(defaultOpacity);
 	strokeOpacitySlider->addListener(this);
@@ -54,11 +57,15 @@ SideBar::SideBar(DrawingCanvas& canvas)
 	opacityLabel->setJustificationType(Justification::centred);
 	opacityLabel->setFont(Font{"Franklin Gothic", 16, Font::plain});
 
+	// Resizer limits
+	int desktopHeight = Desktop::getInstance().getDisplays().getMainDisplay().userArea.getHeight();
+	constrainer.setSizeLimits(100, 400, 250, desktopHeight);
+
 	// SideBar's resizer on the right edge
-	constrainer.setSizeLimits(100, 400, 250, 800);
 	resizerBar = new ResizableEdgeComponent(this, &constrainer, ResizableEdgeComponent::rightEdge);
 	addAndMakeVisible(resizerBar);
-	resizerBar->setLookAndFeel(new LookAndFeel_V3);
+	ScopedPointer<LookAndFeel_V3> resizerLaF;
+	resizerBar->setLookAndFeel(resizerLaF);
 }
 
 SideBar::~SideBar()

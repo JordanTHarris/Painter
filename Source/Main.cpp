@@ -70,7 +70,13 @@ public:
 
             centreWithSize (getWidth(), getHeight());
 			setResizable(true, true);
-			setResizeLimits(600, 400, 800, 600);
+
+			// Resize limits - 600 x 400 to screen size.
+			Rectangle<int> rect = Desktop::getInstance().getDisplays().getMainDisplay().userArea;
+			int desktopWidth = rect.getWidth();
+			int desktopHeight = rect.getHeight();
+			setResizeLimits(600, 400, desktopWidth, desktopHeight);
+			
             setVisible (true);
         }
 

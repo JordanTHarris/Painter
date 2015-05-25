@@ -27,17 +27,12 @@ public:
 
 	void paint(Graphics&);
 	void resized();
-	
-	void timerCallback();
 
 private:
+    //==============================================================================
 	ScopedPointer<DrawingCanvas> drawingCanvas;
 	ScopedPointer<SideBar> sideBar;
 
-	ScopedPointer<ColourSelector> colorSelector;
-	ScopedPointer<Slider> thicknessSlider;
-
-    //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };
 

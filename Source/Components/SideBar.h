@@ -24,6 +24,7 @@ class SideBar    : public Component,
 				   public Slider::Listener
 {
 public:
+	//==============================================================================
     SideBar(DrawingCanvas& panel);
     ~SideBar();
 
@@ -36,6 +37,7 @@ public:
 
 
 private:
+	//==============================================================================
 	/** Button that opens a ColourSelector and calls setColour() when the color
 		changes. setColour() changes the colour of the Graphics object that draws
 		the Path.
@@ -54,8 +56,6 @@ private:
 	Colour colour;
 
 	DrawingCanvas& drawingCanvas;
-
-
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SideBar)
 };

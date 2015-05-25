@@ -23,6 +23,7 @@ const float defaultOpacity = 1.0f;
 class DrawingCanvas    : public Component
 {
 public:
+	//==============================================================================
     DrawingCanvas();
     ~DrawingCanvas();
 
@@ -37,6 +38,7 @@ public:
 	void setStrokeOpacity(float opacity);
 
 private:
+	//==============================================================================
 	Path path;
 	float xPos;
 	float yPos;
