@@ -18,6 +18,9 @@
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
+
+
+
 class MainContentComponent : public Component
 {
 public:
@@ -27,6 +30,7 @@ public:
 
 	void paint(Graphics&);
 	void resized();
+
 
 private:
     //==============================================================================

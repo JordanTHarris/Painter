@@ -78,6 +78,8 @@ public:
 			setResizeLimits(600, 400, desktopWidth, desktopHeight);
 			
             setVisible (true);
+
+
         }
 
         void closeButtonPressed() override

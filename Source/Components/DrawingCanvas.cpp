@@ -16,6 +16,10 @@ DrawingCanvas::DrawingCanvas()
 {
 	strokeThickness = defaultThickness;
 	strokeOpacity = defaultOpacity;
+
+	// Initial size and position
+	canvasRect.setBounds(160, 0, getParentWidth() - 160, getParentHeight()); 
+	setBounds(canvasRect);
 }
 
 DrawingCanvas::~DrawingCanvas()
@@ -28,7 +32,7 @@ void DrawingCanvas::paint(Graphics& g)
 
 	// Draw a black outline around the Sidebar
 	g.setColour(Colours::black);
-	g.drawRoundedRectangle(0, 0, getWidth(), getHeight(), 4.0f, 4.0f);
+	g.drawRoundedRectangle(0, 0, (float)getWidth(), (float)getHeight(), 4.0f, 4.0f);
 
 	g.setColour(drawColour);
 	g.setOpacity(strokeOpacity);
@@ -45,7 +49,7 @@ void DrawingCanvas::mouseDown(const MouseEvent & event)
 		xPos = event.position.getX();
 		yPos = event.position.getY();
 		path.startNewSubPath(xPos, yPos);
-		path.lineTo(xPos, yPos);
+		path.lineTo(xPos, yPos + 1);		// Add 1 to draw when called
 		repaint();
 	}
 	else if (event.mods.isRightButtonDown()) {

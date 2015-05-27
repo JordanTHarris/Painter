@@ -13,6 +13,7 @@ BEGIN
   BEGIN
     BLOCK "040904E4"
     BEGIN
+      VALUE "CompanyName",  "Jordan Harris\0"
       VALUE "FileDescription",  "Painter\0"
       VALUE "FileVersion",  "1.0.0\0"
       VALUE "ProductName",  "Painter\0"

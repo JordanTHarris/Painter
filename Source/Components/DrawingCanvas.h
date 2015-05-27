@@ -37,6 +37,8 @@ public:
 	void setStrokeThickness(float thickness);
 	void setStrokeOpacity(float opacity);
 
+	Rectangle<int> canvasRect{};
+
 private:
 	//==============================================================================
 	Path path;

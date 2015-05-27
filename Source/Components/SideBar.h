@@ -20,7 +20,6 @@
 /*
 */
 class SideBar    : public Component,
-				   public Button::Listener,
 				   public Slider::Listener
 {
 public:
@@ -30,12 +29,11 @@ public:
 
     void paint (Graphics&);
     void resized();
-	void buttonClicked(Button* button);
 	void sliderValueChanged(Slider* slider);
 
 	Colour getColour();
 
-
+	Rectangle<int> sideBarRect{};
 private:
 	//==============================================================================
 	/** Button that opens a ColourSelector and calls setColour() when the color
@@ -56,6 +54,8 @@ private:
 	Colour colour;
 
 	DrawingCanvas& drawingCanvas;
+
+	LookAndFeel_V3 lookAndFeelV3;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SideBar)
 };

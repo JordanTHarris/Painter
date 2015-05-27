@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="dEpBlG" name="Painter" projectType="guiapp" version="1.0.0"
               bundleIdentifier="com.yourcompany.Painter" includeBinaryInAppConfig="1"
-              jucerVersion="3.1.1">
+              jucerVersion="3.1.1" companyName="Jordan Harris" companyEmail="jordanharris1175@gmail.com">
   <MAINGROUP id="hOioUu" name="Painter">
     <GROUP id="{BF66571F-33CD-5BE9-0868-06854048CF2C}" name="Source">
       <GROUP id="{B431F691-6DB8-9306-4D49-1314FA3D24B1}" name="Components">
