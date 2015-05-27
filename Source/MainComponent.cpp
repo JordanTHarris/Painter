@@ -17,18 +17,15 @@ MainContentComponent::MainContentComponent()
 	addAndMakeVisible(drawingCanvas);
 	addAndMakeVisible(sideBar);
 
+	// Set initial size and position for SideBar, which in turn does for DrawingCanvas
+	sideBarRect.setBounds(0, 0, 160, getParentHeight());
+	sideBar->setBounds(sideBarRect);
 
-	
     setSize (800, 600);
 }
 
 MainContentComponent::~MainContentComponent()
 {
-	const Rectangle<int> sideBarRect = sideBar->sideBarRect;
-	const int sideBarWidth = sideBarRect.getWidth();
-	const int sideBarHeight = sideBarRect.getHeight();
-	drawingCanvas->setSize(getWidth() - sideBarWidth,
-						   getHeight() - sideBarHeight);
 }
 
 void MainContentComponent::paint (Graphics& g)
@@ -41,7 +38,8 @@ void MainContentComponent::resized()
 	//sideBar->setBounds(0, 0, 160, getHeight());
 	//drawingCanvas->setBounds(160, 0, getWidth() - 160, getHeight());
 
-	// Update SideBar, when in turn updates DrawingCanvas
-	sideBar->resized();
+	// Update SideBar bounds relative to window, which in turn updates DrawingCanvas
+	sideBarRect.setBounds(0, 0, sideBar->getWidth(), getHeight());
+	sideBar->setBounds(sideBarRect);
 }
 

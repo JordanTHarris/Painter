@@ -37,6 +37,11 @@ private:
 	ScopedPointer<DrawingCanvas> drawingCanvas;
 	ScopedPointer<SideBar> sideBar;
 
+	Rectangle<int> sideBarRect;
+	Rectangle<int> canvasRect;
+
+	LookAndFeel_V3 lookAndFeelV3;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };
 

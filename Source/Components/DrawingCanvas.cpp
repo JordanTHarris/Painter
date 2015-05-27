@@ -18,8 +18,8 @@ DrawingCanvas::DrawingCanvas()
 	strokeOpacity = defaultOpacity;
 
 	// Initial size and position
-	canvasRect.setBounds(160, 0, getParentWidth() - 160, getParentHeight()); 
-	setBounds(canvasRect);
+	//canvasRect.setBounds(160, 0, getParentWidth() - 160, getParentHeight()); 
+	//setBounds(canvasRect);
 }
 
 DrawingCanvas::~DrawingCanvas()

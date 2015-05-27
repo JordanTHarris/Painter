@@ -64,8 +64,8 @@ SideBar::SideBar(DrawingCanvas& canvas)
 	resizerBar->setLookAndFeel(&lookAndFeelV3);
 
 	// Initial size and position
-	sideBarRect.setBounds(0, 0, 160, getParentHeight());	
-	setBounds(sideBarRect);
+	//sideBarRect.setBounds(0, 0, 160, getParentHeight());	
+	//setBounds(sideBarRect);
 }
 
 SideBar::~SideBar()
@@ -83,16 +83,11 @@ void SideBar::paint (Graphics& g)
 
 void SideBar::resized()
 {
-	// Set sideBarRect to new bounds and apply that to SideBar.
-	// Take's the height from MainComponent and everything else from itself.
-	sideBarRect.setBounds(getX(), getY(), getWidth(), getParentHeight());
-	setBounds(sideBarRect);
-
+	// Reposition resizerBar as the SideBar gets resized so it follows along.
 	resizerBar->setBounds(getRight() - 8, 0, 8, getHeight());
-	// Resize DrawingCanvas accordingly as SideBar is resized
-	drawingCanvas.setTopLeftPosition(sideBarRect.getRight(), 0);
-	drawingCanvas.setSize(getParentWidth() - sideBarRect.getWidth(), getParentHeight());
-	repaint();
+
+	// Change bounds of DrawingCanvas so it resizes when SideBar does.
+	drawingCanvas.setBounds(getWidth(), 0, getParentWidth() - getWidth(), getParentHeight());
 
 	int buttonWidth = (int)(getWidth() * 0.75);
 	int buttonX = (getWidth() / 2) - (buttonWidth / 2);
